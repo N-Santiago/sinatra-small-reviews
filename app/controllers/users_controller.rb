@@ -1,5 +1,5 @@
-class UsersController < ApplicatiionController 
+class UsersController < ApplicationController 
 
-    
+
 
 end 
