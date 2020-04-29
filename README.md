@@ -7,7 +7,7 @@ These are the steps to get the app up and running:
 Step 1. Clone this repository
 Make a local copy of this project and move into the directory. This project requires Ruby and RubyGems.
 ```
-    $ git clone git@github.com: 
+    $ git clone git@github.com:https://github.com/N-Santiago/sinatra-small-reviews.git 
 ```
 ## Usage
 TODO: Write instructions here.
