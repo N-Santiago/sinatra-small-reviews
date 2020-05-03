@@ -1,0 +1,16 @@
+<h1>Write Your Review</h1>
+
+<form action="/reviews" method="POST">
+    <input type="hidden" name="user_id" value="session[:user_id]">
+  <label>Title: </label>
+  <br>
+  <input type="text" name="title" id="title">
+  <br>
+  <br>
+  <label>What Do You Think: </label>
+  <br>
+  <textarea name="review" style="margin: 0px; height: 225px; width: 250px;" required></textarea>
+  <br>
+  <br>
+  <input type="submit" value="Submit">
+</form>
