@@ -6,4 +6,5 @@ end
 
 use UsersController 
 use SessionsController
+use ReviewsController
 run ApplicationController

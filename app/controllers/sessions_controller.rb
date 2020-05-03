@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
     post "/signup" do
 		@user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
         if @user.save
-            binding.pry
 			session[:user_id] = @user.id
 			redirect "/reviews"
 		  else
@@ -16,10 +15,10 @@ class SessionsController < ApplicationController
     end
     
     get "/login" do
-		erb :login
+		erb :"users/login"
 	end
 
-	post "/login" do
+    post "/login" do
 	    @user = User.find_by(username: params[:username])
 		if @user && @user.authenticate(params[:password])
 			session[:user_id] = @user.id
