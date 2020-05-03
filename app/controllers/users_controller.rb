@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     end 
     
     delete "/users/:id" do
-        user = User.find(params[:id])
+        @user = User.find(params[:id])
 
     end 
 
