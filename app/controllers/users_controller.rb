@@ -1,24 +1,13 @@
 class UsersController < ApplicationController 
     
-    def "users/:id" do
-        erb :
+    get "/users/:id" do
+        @user = User.find(params[:id])
+        erb :"/users/show"
     end 
     
-    get "users/signup" do
+    delete "/users/:id" do
+        user = User.find(params[:id])
 
     end 
-
-    post "users/signup" do
-
-    end 
-
-    get "logout" do
-
-    end
-    
-    delete "deactivate" do
-
-    end 
-
 
 end 

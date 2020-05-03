@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200429165235) do
+ActiveRecord::Schema.define(version: 20200503005801) do
 
   create_table "reviews", force: :cascade do |t|
     t.string   "title"
     t.datetime "date"
     t.string   "review"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
