@@ -1,4 +1,19 @@
 <h1>The Small Reviews</h1>
 
 <a href="/reviews/new">Create a Review</a>
+<br>
+<br>
+<ul>
+  <%Review.all.each do |review|%>
+  <li><strong><%=review.title %></strong>
+    <p><small><%=review.user.username %></small></p>
+      <p><%=review.content %></p>
+      <small>Created: <%=review.created_at %></small> <small>Updated: <%=review.updated_at %></small>
+  </li>
+  <br>
+  <%end%>
+</ul> 
+
+
+
 
