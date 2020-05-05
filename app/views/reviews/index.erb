@@ -5,14 +5,14 @@
 <br>
 <ul>
   <%Review.all.each do |review|%>
-    <li><strong><a href="/reviews/<%=review.id %>"><%=review.title %></strong></a> 
+    <p><li><strong><a href="/reviews/<%=review.id %>"><%=review.title %></strong></a> 
     <p><small><%=review.user.username %></small></p>
       <p><%=review.content %></p>
       <small>Created: <%=review.created_at %></small> <small>Updated: <%=review.updated_at %></small>
   </li>
   <br>
   <%end%>
-</ul> 
+</ul></p> 
 
 
 

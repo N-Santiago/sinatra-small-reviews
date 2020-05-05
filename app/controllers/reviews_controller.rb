@@ -23,37 +23,29 @@ get "/reviews/:id" do
     erb :"reviews/display"
 end
 
-get '/reviews/:id/edit' do
+get "/reviews/:id/edit" do
     if !logged_in?
-      redirect to '/login'
+      redirect "/login"
     end 
     @review = Review.find(params[:id])
-    if @review && @review.user == current_user
+    if @review && @review.user.id == session[:user_id]
       erb :'reviews/edit'
     else
-      redirect to '/reviews'
+      redirect '/login'
     end
   end
 
-patch '/reviews/:id' do
-    if !logged_in?
-      redirect to '/login'
-    end 
-    if params[:content] == ""
-      redirect to "/reviews/#{params[:id]}/edit"
-    else
-      @review = Review.find_by_id(params[:id])
-      if @review && @review.user == current_user
-        if @review.update(content: params[:content])
-          redirect to "/reviews/#{@review.id}"
-        else
-          redirect to "/reviews/#{@review.id}/edit"
-        end
-      else
-        redirect to '/reviews'
-      end
+
+  patch '/reviews/:id' do
+    @review = Review.find(params[:id])
+    if params[:review][:content].empty?
+      redirect "/reviews/#{@review.id}/edit"
     end
-  end  
+    @review.update(params[:review])
+    @review.save
+    redirect "/reviews/#{@review.id}"
+
+  end
 
 #delete_review
 
