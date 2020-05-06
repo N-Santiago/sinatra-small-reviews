@@ -1,11 +1,14 @@
 <h1>Edit Your Small Review</h1>
-<form action="/reviews/<%= @review.id %>" method="POST">
-      <input id="hidden" type="hidden" name="_method" value="patch">
+
+<p><form action="/reviews/<%= @review.id %>" method="POST">
+      <input id="hidden" type="hidden" name="_method" value="PATCH">
       <label for "title">Title: </label>
       <input type="text" id="title" name="title" value="<%= @review.title %>">
       <br />
+      <br>
       <label for "content">Content:</label>
       <input type="text" id="content" name="content" value="<%= @review.content %>">
       <br />
+      <br>
       <input type="submit" value="submit" id="submit">
-    </form>
+</form></p>

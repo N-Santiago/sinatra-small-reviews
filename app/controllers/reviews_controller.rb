@@ -23,6 +23,16 @@ get "/reviews/:id" do
     erb :"reviews/display"
 end
 
+patch "/reviews/:id" do
+  @review = Review.find(params[:id])
+  if params[:content].empty?
+    redirect "/reviews/#{@review.id}/edit"
+  end
+  @review.update(:title => params[:title], :content => params[:content])
+  @review.save
+  redirect "/reviews/#{@review.id}"
+end
+
 get "/reviews/:id/edit" do
     if !logged_in?
       redirect "/login"
@@ -35,18 +45,15 @@ get "/reviews/:id/edit" do
     end
   end
 
-
-  patch '/reviews/:id' do
-    @review = Review.find(params[:id])
-    if params[:review][:content].empty?
-      redirect "/reviews/#{@review.id}/edit"
+  delete '/reviews/:id/delete' do
+    if !logged_in?
+      redirect "/login"
+    end 
+    @review = Review.find_by_id(params[:id])
+    if @review && @review.user == current_user
+      @review.delete
     end
-    @review.update(params[:review])
-    @review.save
-    redirect "/reviews/#{@review.id}"
-
+    redirect to '/reviews'
   end
-
-#delete_review
 
 end 
