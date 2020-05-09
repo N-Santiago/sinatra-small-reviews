@@ -1,9 +1,13 @@
 <h1>Small Review by: <%=@review.user.username %></h1>
 <br> 
 <h2><%=@review.title %></h2>
-<small><a href="/reviews/<%=@review.id %>/edit">Edit</a></small>
-<br>
-<br>
+<% if auth_user %>
+    <a href="/reviews/<%=@review.id %>/edit"><input type="submit" value="Edit" id="submit"></a> 
+    <br>
+    <br>
+    <form action="/reviews/<%= @review.id %>/delete" method="POST"> <input id="hidden" type="hidden" name="_method" value="delete"> <input type="submit" value="Delete" id="submit"> </form>   
+    <br>
+<% end %> 
 <p><%=@review.content %></p>
 <br>
 <small>Created: <%=@review.created_at %></small> <small>Updated: <%=@review.updated_at %></small>

@@ -19,41 +19,52 @@ post "/reviews" do
 end 
 
 get "/reviews/:id" do
-    @review = Review.find(params[:id])
+  set_review
+  if @review
     erb :"reviews/display"
+  else 
+    redirect "/reviews"
+  end 
 end
 
 patch "/reviews/:id" do
-  @review = Review.find(params[:id])
-  if params[:content].empty?
-    redirect "/reviews/#{@review.id}/edit"
+  set_review
+  if @review && auth_user 
+    @review.update(:title => params[:title], :content => params[:content])
+    @review.save
+    redirect "/reviews/#{@review.id}"
+  else 
+    redirect "/reviews"
   end
-  @review.update(:title => params[:title], :content => params[:content])
-  @review.save
-  redirect "/reviews/#{@review.id}"
 end
 
 get "/reviews/:id/edit" do
-    if !logged_in?
-      redirect "/login"
-    end 
-    @review = Review.find(params[:id])
-    if @review && @review.user.id == session[:user_id]
-      erb :'reviews/edit'
-    else
-      redirect '/login'
-    end
-  end
+  set_review 
+  if @review && auth_user
+    erb :"reviews/edit"  
+  else 
+    redirect "reviews/error"
+  end    
+end
 
   delete '/reviews/:id/delete' do
-    if !logged_in?
-      redirect "/login"
-    end 
-    @review = Review.find_by_id(params[:id])
-    if @review && @review.user == current_user
-      @review.delete
-    end
-    redirect to '/reviews'
+    set_review 
+    if @review && auth_user
+      @review.delete 
+      redirect "/reviews"  
+    else 
+      erb :"reviews/error"
+    end    
   end
+
+  private 
+
+  def set_review 
+    @review = Review.find_by_id(params[:id])
+  end
+  
+  def auth_user 
+    @review.user.id == current_user.id
+  end 
 
 end 

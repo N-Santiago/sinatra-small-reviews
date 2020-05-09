@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 	get "/signup" do
 		if logged_in?
 			redirect to '/reviews'
+		else
 		erb :"users/signup"
 		end         
     end 
