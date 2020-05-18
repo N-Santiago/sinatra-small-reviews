@@ -6,7 +6,7 @@
 <ul>
   <%Review.all.each do |review|%>
     <p><li><strong><a href="/reviews/<%=review.id %>"><%=review.title %></strong></a> 
-    <p><small><%=review.user.username %></small></p>
+    <p><small><a href="/users/<%=review.user.id %>"><%=review.user.username %></small></a></p>
       <p><%=review.content %></p>
       <small>Created: <%=review.created_at %></small> <small>Updated: <%=review.updated_at %></small>
   </li>

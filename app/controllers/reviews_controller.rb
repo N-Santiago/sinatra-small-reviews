@@ -17,7 +17,7 @@ post "/reviews" do
         redirect "/reviews/new"
     end 
 end 
-#else puts "Too many character to be called a small review!"
+
 get "/reviews/:id" do
   set_review
   if @review
