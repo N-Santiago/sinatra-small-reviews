@@ -10,7 +10,7 @@ get "/reviews/new" do
 end
 
 post "/reviews" do
-    @review = Review.new(:title => params[:title], :content => params[:content], :user_id => params[:user_id], :created_at => "#{Time.now}", :updated_at => "#{Time.now}")
+    @review = Review.new(:title => params[:title], :content => params[:content], :user_id => params[:user_id], :category_id => params[:category_id], :created_at => "#{Time.now}", :updated_at => "#{Time.now}")
     if @review.save
         redirect "/reviews/#{@review.id}"
     else

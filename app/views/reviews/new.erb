@@ -7,6 +7,15 @@
   <input type="text" name="title" id="title">
   <br>
   <br>
+  <select id="category" name="category">
+    <option>--Genre--</option> 
+    <%Category.all.each do |category| %>
+    <option value="<%=category.name%>"><%=category.name%></option>
+    <%end%>
+    required
+</select>
+  <br>    
+  <br>
   <label>What Do You Think: </label>
   <br>
   <textarea name="content" style="margin: 0px; height: 225px; width: 250px;" required></textarea>

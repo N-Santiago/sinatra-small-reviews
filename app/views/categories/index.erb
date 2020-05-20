@@ -1,0 +1,10 @@
+<h1>The Small Reviews</h1>
+<h2>Categories<h2>
+<br>
+<br>
+<%Category.all.each do |category|%>
+    <li>
+      <p><%=category.name %></p>
+    </li>
+  <br>
+  <%end%> 
