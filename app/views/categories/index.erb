@@ -1,10 +1,9 @@
-<h1>The Small Reviews</h1>
-<h2>Categories<h2>
+<h1>Categories<h1>
 <br>
 <br>
 <%Category.all.each do |category|%>
     <li>
-      <p><%=category.name %></p>
+    <a href="/categories/<%=category.id %>"<p><%=category.name %></a></p>
     </li>
   <br>
   <%end%> 

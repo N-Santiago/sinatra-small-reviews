@@ -10,7 +10,8 @@ get "/reviews/new" do
 end
 
 post "/reviews" do
-    @review = Review.new(:title => params[:title], :content => params[:content], :user_id => params[:user_id], :category_id => params[:category_id], :created_at => "#{Time.now}", :updated_at => "#{Time.now}")
+  category = Category.find_by(name: params[:category])
+    @review = Review.new(:title => params[:title], :content => params[:content], :user_id => params[:user_id], :category_id => category.id, :created_at => "#{Time.now}", :updated_at => "#{Time.now}")
     if @review.save
         redirect "/reviews/#{@review.id}"
     else
@@ -29,8 +30,9 @@ end
 
 patch "/reviews/:id" do
   set_review
+  category = Category.find_by(name: params[:category])
   if @review && auth_user 
-    @review.update(:title => params[:title], :content => params[:content])
+    @review.update(:title => params[:title], :category_id => category.id, :content => params[:content])
     @review.save
     redirect "/reviews/#{@review.id}"
   else 

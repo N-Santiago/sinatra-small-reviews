@@ -1,0 +1,10 @@
+<h1>Category: <%=@category.name%></h1>
+<br> 
+<br>
+<%@category.reviews.each do |review|%>
+    <li>
+    <a href="/reviews/<%=review.title %>"<p><%=review.title %></a></p>
+    </li>
+  <br>
+  <%end%>
+<br>   
