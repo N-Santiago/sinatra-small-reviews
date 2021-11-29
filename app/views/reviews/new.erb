@@ -9,7 +9,7 @@
   <br>
   <select id="category" name="category">
     <option>--Genre--</option> 
-    <%Category.all.each do |category| %>
+        <%Category.all.each do |category| %>
     <option value="<%=category.name%>"><%=category.name%></option>
     <%end%>
     required
