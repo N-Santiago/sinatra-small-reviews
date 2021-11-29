@@ -16,7 +16,7 @@ TODO: Create an account and submit your own movie reviews. Have fun sharing your
 Bug reports and pull requests are welcome on GitHub at. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 ## License
-The gem is available as open source under the terms of the MIT License.
+Available as open source under the terms of the MIT License.
 
 ## Code of Conduct
 Everyone interacting in the Breweries project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
