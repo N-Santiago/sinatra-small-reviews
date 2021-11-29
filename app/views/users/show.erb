@@ -4,10 +4,10 @@
 <ul>
 <% @user.reviews.each do |review| %>
     <p><li><strong><a href="/reviews/<%=review.id %>"><%=review.title %></strong></a> 
-    <p><small><%=review.user.username %></small></p>
-      <p><%=review.content %></p>
-      <small>Created: <%=review.created_at %></small> <small>Updated: <%=review.updated_at %></small>
-  </li>
+        <p><small><%=review.user.username %></small></p>
+        <p><%=review.content %></p>
+        <small>Created: <%=review.created_at %></small> <small>Updated: <%=review.updated_at %></small>
+    </li>
   <br>
-  <%end%>
+<%end%>
 </ul></p> 
