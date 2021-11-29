@@ -10,7 +10,7 @@ Make a local copy of this project and move into the directory. This project requ
     $ git clone git@github.com:https://github.com/N-Santiago/sinatra-small-reviews.git 
 ```
 ## Usage
-TODO: Write instructions here.
+TODO: Create an account and submit your own movie reviews. Have fun sharing your thoughts about your favorite (or least favorite) movies. 
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
