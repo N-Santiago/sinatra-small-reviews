@@ -6,7 +6,7 @@
 <br>
 <% if auth_user %>
     <a href="/reviews/<%=@review.id %>/edit"><input type="submit" value="Edit" id="submit"></a> 
-    <form action="/reviews/<%= @review.id %>/delete" method="POST"> <input id="hidden" type="hidden" name="_method" value="delete"> <input type="submit" value="Delete" id="submit"> </form>   
+    <form action="/reviews/<%= @review.id %>/delete" method="POST"><br> <input id="hidden" type="hidden" name="_method" value="delete"> <input type="submit" value="Delete" id="submit"> </form>   
     <br>
 <% end %> 
 <p><%=@review.content %></p>
