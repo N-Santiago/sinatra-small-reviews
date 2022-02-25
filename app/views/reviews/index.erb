@@ -2,7 +2,6 @@
 
 <a href="/reviews/new">Create a Review</a> | <a href="/categories">Check the Reviews by Genre</a> | <a href="/logout">Logout</a>
 <br>
-<br>
 <ul>
   <%Review.all.each do |review|%>
     <p><li><strong><a href="/reviews/<%=review.id %>"><%=review.title %></strong></a> 
