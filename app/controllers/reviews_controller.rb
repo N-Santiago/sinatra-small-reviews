@@ -1,3 +1,4 @@
+require 'pry'
 class ReviewsController < ApplicationController
 
     get "/reviews" do
@@ -32,7 +33,7 @@ class ReviewsController < ApplicationController
         set_review
         category = Category.find_by(name: params[:category])
         if @review && auth_user 
-            @review.update(:title => params[:title], :category_id => category.id, :content => params[:content])
+            @review.update(:title => params[:title], :content => params[:content])
             @review.save
             redirect "/reviews/#{@review.id}"
         else 
