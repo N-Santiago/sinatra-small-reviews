@@ -8,9 +8,8 @@ These are the steps to get the app up and running:
 
 Step 1. Clone this repository Make a local copy of this project and move into the directory.
 
-```
-    $ git clone git@github.com:https://github.com/N-Santiago/sinatra-small-reviews.git 
-```
+```$ git clone git@github.com:https://github.com/N-Santiago/sinatra-small-reviews.git ```
+
 ## Usage
 Create an account and submit your own movie reviews. Have fun sharing your thoughts about your favorite (or least favorite) films. :film_strip:
 
