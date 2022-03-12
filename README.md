@@ -1,5 +1,7 @@
-# The Small Reviews Sinatra App 
-This project is inspired by own movie blog The Small Reviews. It is designed to submit short movie reviews.  
+# README
+
+# Small Reviews: The Sinatra Version <img src="http://sinatrarb.com/sinatra.github.com/images/logo.png" />
+This project is the first version of Small Reviews, a web forum inspired by my own movie blog at the time. It is designed to submit short movie reviews. Similar to tweets on Twitter, but dedicated to movies.
 
 ## Setup
 These are the steps to get the app up and running:
