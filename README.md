@@ -1,6 +1,6 @@
 # README
 
-# Small Reviews: The Sinatra Version <img src="http://sinatrarb.com/sinatra.github.com/images/logo.png" />
+# Small Reviews: The Sinatra Version <img src="http://sinatrarb.com/sinatra.github.com/images/logo.png" width="24" height="24" />
 This project is the first version of Small Reviews, a web forum inspired by my own movie blog at the time. It is designed to submit short movie reviews. Similar to tweets on Twitter, but dedicated to movies.
 
 ## Setup
